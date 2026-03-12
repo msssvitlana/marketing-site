@@ -1,0 +1,64 @@
+:root {
+  /* Фони */
+  --color-bg-main: #fff8f0; /* Основний фон */
+  --color-bg-secondary: #fff1e6; /* Вторинний фон / блоки */
+
+  /* Текст */
+  --color-text-main: #222222; /* Основний текст */
+  --color-text-secondary: #555555; /* Вторинний текст / підписи */
+
+  /* Акценти */
+  --color-accent: #f5c6a5; /* Кнопки, посилання, hover */
+
+  /* Додатково можна зробити тіні / бордери */
+  --color-border: #e6d5c3; /* М’яка коричнева рамка / бордери */
+  --color-shadow: rgba(0, 0, 0, 0.05); /* М’яка тінь */
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--color-text-main);
+  background-color: var(--color-bg-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+main {
+  padding: 0 20px 32px;
+  min-width: 320px;
+  max-width: 375px;
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    padding: 0 32px 32px;
+    max-width: 1024px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  main {
+    padding: 0 64px 32px;
+    max-width: 1680px;
+  }
+}
