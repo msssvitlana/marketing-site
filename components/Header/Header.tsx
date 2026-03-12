@@ -1,30 +1,23 @@
-// components/Header/Header.tsx
+// component Header
 
-import css from './Header.module.css';
-import Link from 'next/link';
+import Image from "next/image";
+import styles from "./Header.module.css";
+import Link from "next/link";
+import Navigation from "../Navigation/Navigation";
 
 const Header = () => {
   return (
-    <header className={css.header}>
-      <Link href='/' aria-label='Home'>
-        LOgo
+    <header className={styles.header}>
+      <Link href="/" aria-label="Home" className={styles.logoLink}>
+        <Image
+          width={72}
+          height={34}
+          alt="Logo"
+          src="/images/logo/logo.png"
+          className={styles.logoLinkImg}
+        />
       </Link>
-      <nav aria-label='Main Navigation'>
-        <ul className={css.navigation}>
-          <li>
-            <Link href='/about'>Про нас</Link>
-          </li>
-          <li>
-            <Link href='/services'>Послуги</Link>
-          </li>
-          <li>
-            <Link href='/portfolio'>Портфоліо</Link>
-          </li>
-          <li>
-            <Link href='/contacts'>Контакти</Link>
-          </li>
-        </ul>
-      </nav>
+      <Navigation />
     </header>
   );
 };
