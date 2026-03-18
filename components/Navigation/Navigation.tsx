@@ -1,7 +1,7 @@
 // component Navigation to header ->>
 
-import Link from 'next/link';
-import styles from './Navigation.module.css';
+import Link from "next/link";
+import styles from "./Navigation.module.css";
 
 const Navigation = () => {
   return (
@@ -30,6 +30,6 @@ const Navigation = () => {
       </ul>
     </nav>
   );
-}
+};
 
-export default Navigation
+export default Navigation;
