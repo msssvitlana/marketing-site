@@ -1,0 +1,41 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s ease;
+  z-index: 1000;
+}
+
+.backdrop {
+  background: rgba(0,0,0,0.5); 
+}
+
+.modalWrap {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.backdrop .modalWrap {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.icon {
+  display: block;
+}
