@@ -1,30 +1,33 @@
 .backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: background 0.3s ease;
-  z-index: 1000;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease-in-out,
+    visibility 0.3s ease-in-out;
 }
 
-.backdrop {
-  background: rgba(0,0,0,0.5); 
+.backdrop.open {
+  opacity: 1;
+  visibility: visible;
 }
 
 .modalWrap {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  transform: translateY(-20px);
-  opacity: 0;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  width: 300px;
+  height: 100%;
+  background-color: #ffffff;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
 }
 
-.backdrop .modalWrap {
-  transform: translateY(0);
-  opacity: 1;
+.backdrop.open .modalWrap {
+  transform: translateX(0);
 }
 
 .closeButton {
@@ -34,8 +37,4 @@
   background: none;
   border: none;
   cursor: pointer;
-}
-
-.icon {
-  display: block;
 }
