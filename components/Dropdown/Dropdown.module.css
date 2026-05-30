@@ -1,0 +1,52 @@
+.dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdownBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 8px;
+  font-weight: 500;
+  font-size: 18px;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.dropdownBtn:hover,
+.dropdownBtn:focus {
+  color: var(--base-danger);
+  transform: scale(1.05);
+}
+
+.dropdownBtn:active {
+  color: var(--base-danger-darker);
+}
+
+.dropdownBtnIcon {
+  fill: currentColor;
+  transition: transform 0.3s ease;
+}
+
+.arrowOpen {
+  transform: rotate(180deg);
+}
+
+.selected {
+  color: var(--base-danger);
+}
+
+.selected::after {
+  position: absolute;
+  left: 0;
+  bottom: 12px;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: var(--base-danger);
+}
