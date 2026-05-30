@@ -1,4 +1,4 @@
-.social {
+.socialList {
   display: none;
 }
 
@@ -7,14 +7,26 @@
   align-items: center;
   justify-content: center;
   padding: 12px;
+  color: var(--base-ink);
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .socialIcon {
-  fill: var(--base-ink);
+  fill: currentColor;
+}
+
+.socialLink:hover,
+.socialLink:focus {
+  color: var(--base-danger);
+  transform: scale(1.05);
+}
+
+.socialLink:active {
+  color: var(--base-danger-darker);
 }
 
 @media screen and (min-width: 768px) {
-  .social {
+  .socialList {
     display: flex;
     align-items: center;
     gap: 14px;
@@ -23,7 +35,7 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .social {
+  .socialList {
     margin-right: 32px;
   }
 }
