@@ -1,32 +1,31 @@
 // component Navigation to header ->>
 
+"use client";
+
 import Link from "next/link";
 import styles from "./Navigation.module.css";
+import { navigation } from "@/constants/nav";
+import Dropdown from "../Dropdown/Dropdown";
+import { useState } from "react";
 
 const Navigation = () => {
+  const [isOpenDrop, setIsOpenDrop] = useState(false);
+
+  const openDrop = () => setIsOpenDrop(true);
+  const closeDrop = () => setIsOpenDrop(false);
+
   return (
     <nav aria-label="Main Navigation" className={styles.navigation}>
       <ul className={styles.navigationList}>
-        <li className={styles.navigationItem}>
-          <Link className={styles.navigationLink} href="/about">
-            Про нас
-          </Link>
-        </li>
-        <li className={styles.navigationItem}>
-          <Link className={styles.navigationLink} href="/services">
-            Послуги
-          </Link>
-        </li>
-        <li className={styles.navigationItem}>
-          <Link className={styles.navigationLink} href="/portfolio">
-            Портфоліо
-          </Link>
-        </li>
-        <li className={styles.navigationItem}>
-          <Link className={styles.navigationLink} href="/contacts">
-            Контакти
-          </Link>
-        </li>
+        {navigation.map((item) => (
+          <li key={item.id}>
+            {item.children ? (
+              <Dropdown navItem={item} onClick={openDrop} isOpen={isOpenDrop} />
+            ) : item.link ? (
+              <Link href={item.link}>{item.label}</Link>
+            ) : null}
+          </li>
+        ))}
       </ul>
     </nav>
   );

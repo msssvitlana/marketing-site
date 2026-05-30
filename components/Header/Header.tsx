@@ -1,51 +1,59 @@
 // component Header
 "use client";
 
-import Image from "next/image";
 import styles from "./Header.module.css";
 import Link from "next/link";
 import Navigation from "../Navigation/Navigation";
 import Modal from "../Modal/Modal";
 import { useState } from "react";
 import Menu from "../Menu/Menu";
+import Social from "../Social/Social";
+import Icon from "../iu/Icon/Icon";
+import Button from "../iu/Button/Button";
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpenMenu, setIsOpenMenu] = useState(false);
 
-  const open = () => setIsOpen(true);
-  const close = () => setIsOpen(false);
+  const openMenu = () => setIsOpenMenu(true);
+  const closeMenu = () => setIsOpenMenu(false);
 
   return (
     <>
       <header className={styles.header}>
         <Link href="/" aria-label="Home" className={styles.logoLink}>
-          <Image
-            width={72}
-            height={34}
-            alt="Logo"
-            src="/images/logo/logo.png"
-            className={styles.logoLinkImg}
+          <Icon
+            width={114}
+            height={54}
+            name="logo"
+            className={styles.iconLogo}
           />
         </Link>
-        <a href="tel:+380673327701 ">+38 (067) 332-77-01</a>
 
-        <button
-          aria-label="Open Menu"
-          className={styles.headerMenuBtn}
-          onClick={open}
-        >
-          <svg
-            width={28}
-            height={28}
-            aria-label="Open Menu"
-            className={styles.headerMenuIcon}
-          >
-            <use href="/icons/icons.svg#burger"></use>
-          </svg>
-        </button>
         <Navigation />
+
+        <div className={styles.headerActions}>
+          <Social />
+
+          <Button
+            onClick={openMenu}
+            aria-label="Open Menu"
+            className={styles.headerMenuBtn}
+            type="button"
+          >
+            <Icon
+              width={24}
+              height={24}
+              name="menu"
+              className={styles.headerMenuIcon}
+            />
+          </Button>
+
+          <a className={styles.phoneNumber} href="tel:+380673327701">
+            +38 067 3327701
+          </a>
+        </div>
       </header>
-      <Modal isOpen={isOpen} onClose={close}>
+      <Modal isOpen={isOpenMenu} onClose={closeMenu}>
         <Menu />
       </Modal>
     </>
