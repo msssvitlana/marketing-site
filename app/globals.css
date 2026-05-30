@@ -1,42 +1,26 @@
 :root {
-  /* Фони */
-  --color-bg-main: #fff8f0; /* Основний фон */
-  --color-bg-secondary: #fff1e6; /* Вторинний фон / блоки */
+  /* Base light surfaces */
+  --base-light: #f4f5f8;
+  --base-white: #fbfcff;
 
-  /* Текст */
-  --color-text-main: #222222; /* Основний текст */
-  --color-text-secondary: #555555; /* Вторинний текст / підписи */
+  /* Neutral support colors */
+  --base-neutral: #c2c4cc;
+  --base-overlay: rgba(19, 22, 39, 0.5);
 
-  /* Акценти */
-  --color-accent: #e3d6ca;
-  --color-accent-hover: #d8cabc;
-  --color-accent-active: #cbbcad;
+  /* Primary dark tones */
+  --base-dark: #131627;
+  --base-ink: #050815;
 
-  /* Додатково можна зробити тіні / бордери */
-  --color-border: #e6d5c3; /* М’яка коричнева рамка / бордери */
-  --color-divider: #eaded2; /*для тонких ліній */
-
-  /* Тіні */
-  --color-shadow: rgba(0, 0, 0, 0.05); /* М’яка тінь */
-  --color-shadow-soft: rgba(0, 0, 0, 0.04); /* дуже легка */
+  /* Danger states */
+  --base-danger: #bb2921;
+  --base-danger-dark: #a8251e;
+  --base-danger-darker: #96211a;
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--color-text-main);
-  background-color: var(--color-bg-main);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 * {
@@ -44,27 +28,67 @@ a {
   padding: 0;
 }
 
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+}
+
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  color: var(--base-ink);
+  background-color: var(--base-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:focus-visible {
+  outline: 2px solid var(--base-dark);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--base-dark);
+  color: var(--base-white);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 ol,
 ul {
   list-style: none;
 }
 
+button {
+  font-family: inherit;
+  background-color: transparent;
+  border: none;
+}
+
 main {
-  padding: 0 20px 32px;
+  padding: 0 16px;
   min-width: 320px;
   max-width: 375px;
 }
 
 @media screen and (min-width: 768px) {
   main {
-    padding: 0 32px 32px;
+    padding: 0 32px;
     max-width: 1024px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   main {
-    padding: 0 60px 32px;
+    padding: 0 60px;
     max-width: 1680px;
   }
 }

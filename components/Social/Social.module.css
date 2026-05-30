@@ -1,0 +1,29 @@
+.social {
+  display: none;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+
+.socialIcon {
+  fill: var(--base-ink);
+}
+
+@media screen and (min-width: 768px) {
+  .social {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-right: 24px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .social {
+    margin-right: 32px;
+  }
+}
