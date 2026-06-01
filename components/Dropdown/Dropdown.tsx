@@ -1,12 +1,12 @@
 "use client";
 
 import { NavigationItem } from "@/types/nav";
-import Button from "../iu/Button/Button";
+import Button from "../ui/Button/Button";
 import styles from "./Dropdown.module.css";
 import Link from "next/link";
-import Icon from "../iu/Icon/Icon";
+import Icon from "../ui/Icon/Icon";
 import withBlurClick from "@/helper/utils";
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 
 type DropdownProps = {
   navItem: NavigationItem;
@@ -25,28 +25,42 @@ const Dropdown = ({
 }: DropdownProps) => {
   const refDrop = useRef<HTMLDivElement>(null);
 
+  const handleClose = useCallback(() => {
+    onClose();
+  }, [onClose]);
+
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        handleClose();
+      }
+    },
+    [handleClose],
+  );
+
+  const handleClickOutside = useCallback(
+    (e: MouseEvent) => {
+      const el = refDrop.current;
+      if (!el) return;
+
+      if (!el.contains(e.target as Node)) {
+        handleClose();
+      }
+    },
+    [handleClose],
+  );
+
   useEffect(() => {
     if (!isOpen) return;
 
-    const handleKeyDown = (e: KeyboardEvent) =>
-      e.code === "Escape" && onClose();
     document.addEventListener("keydown", handleKeyDown);
-
-    const handleClickOutside = (e: MouseEvent) => {
-      if (!refDrop.current) return;
-
-      if (!refDrop.current.contains(e.target as Node)) {
-        onClose();
-      }
-    };
-
     document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [isOpen, onClose]);
+  }, [isOpen, handleKeyDown, handleClickOutside]);
   return (
     <div className={styles.dropdown} ref={refDrop}>
       <Button
@@ -62,23 +76,21 @@ const Dropdown = ({
           name="arrow"
         />
       </Button>
-      {isOpen && (
-        <ul className={styles.dropdownList}>
-          {navItem.children?.map(({ id, label, link }) =>
-            link ? (
-              <li className={styles.dropdownItem} key={id}>
-                <Link
-                  className={styles.dropdownLink}
-                  href={link}
-                  onClick={(e) => withBlurClick(e, onClose)}
-                >
-                  {label}
-                </Link>
-              </li>
-            ) : null,
-          )}
-        </ul>
-      )}
+      <ul className={`${styles.dropdownList} ${isOpen ? styles.open : ""}`}>
+        {navItem.children?.map(({ id, label, link }) =>
+          link ? (
+            <li className={styles.dropdownItem} key={id}>
+              <Link
+                className={styles.dropdownLink}
+                href={link}
+                onClick={(e) => withBlurClick(e, onClose)}
+              >
+                {label}
+              </Link>
+            </li>
+          ) : null,
+        )}
+      </ul>
     </div>
   );
 };

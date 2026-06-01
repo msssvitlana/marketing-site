@@ -1,6 +1,6 @@
 import { socials } from "@/constants/social";
 import styles from "./Social.module.css";
-import Icon from "../iu/Icon/Icon";
+import Icon from "../ui/Icon/Icon";
 import withBlurClick from "@/helper/utils";
 
 const Social = () => {
