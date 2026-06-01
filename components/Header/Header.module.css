@@ -60,6 +60,19 @@
     display: block;
     font-weight: 500;
     font-size: 18px;
+    transition:
+      color 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .phoneNumber:hover,
+  .phoneNumber:focus {
+    color: var(--base-danger);
+    transform: scale(1.05);
+  }
+
+  .phoneNumber:active {
+    color: var(--base-danger-darker);
   }
 
   .headerMenuBtn {

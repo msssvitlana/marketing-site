@@ -8,8 +8,8 @@ import Modal from "../Modal/Modal";
 import { useState } from "react";
 import Menu from "../Menu/Menu";
 import Social from "../Social/Social";
-import Icon from "../iu/Icon/Icon";
-import Button from "../iu/Button/Button";
+import Icon from "../ui/Icon/Icon";
+import Button from "../ui/Button/Button";
 
 const Header = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
