@@ -14,7 +14,7 @@ const Hero = () => {
                 
                   <h1 className={styles.title}><span className={styles.titleSpan}>Рекламні рішення</span> будь-якої складності</h1>
           <p className={styles.description}>
-          Від дизайну до реалізації масштабних <br />
+          Від дизайну до реалізації масштабних
            рекламних конструкцій.
           </p>
         </div>
