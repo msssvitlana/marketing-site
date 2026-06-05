@@ -10,20 +10,20 @@ const AboutMain = () => {
      
     <section className={styles.AboutMainSection}>
       <div className={styles.leftSide}>
-               <div className={styles.textWrapper}>
+               <div className={styles.aboutMainTextWrapper}>
                 
-                  <h2 className={styles.title}>Про <span className={styles.titleSpan}>компанію</span> </h2>
-          <p className={styles.description}>
+                  <h2 className={styles.aboutMainTitle}>Про <span className={styles.aboutMainTitleSpan}>компанію</span> </h2>
+          <p className={styles.aboutMainDescription}>
 Ми — рекламна компанія, яка допомагає бізнесам ефективно презентувати себе через продумані та якісно реалізовані рішення.
 Працюємо з проєктами будь-якої складності — від поліграфії до масштабних конструкцій, підбираючи оптимальний підхід для кожного клієнта.
           </p>
         </div>
 
         
-   <Link className={styles.link} href="/about">
+   <Link className={styles.aboutMainLink} href="/about">
           Детальніше
           <Icon
-          className={`${styles.icon}`}
+          className={`${styles.aboutMainIcon}`}
           width={18}
           height={18}
           name="icon-arrow-right"
@@ -31,18 +31,18 @@ const AboutMain = () => {
       </Link>
       
       </div>
-   <div className={styles.rightSide}>
-      <ul className={styles.featureList}>
+   <div className={styles.aboutMainRightSide}>
+      <ul className={styles.aboutMainFeatureList}>
   {features.map(({ id, label, icon }) => (
-    <li className={styles.featureItem} key={id}>
+    <li className={styles.aboutMainFeatureItem} key={id}>
       <Icon
-        className={styles.featureIcon}
+        className={styles.aboutMainFeatureIcon}
         width={102}
         height={82}
         name={icon}
       />
 
-      <p className={styles.featureLabel}>
+      <p className={styles.aboutMainFeatureLabel}>
         {label}
       </p>
     </li>

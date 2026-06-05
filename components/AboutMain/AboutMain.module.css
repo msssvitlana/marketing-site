@@ -1,4 +1,4 @@
-.AboutMainSectionS  {
+.AboutMainSection {
  font-family: var(--font-sans);
   display: flex;
   flex-direction: column;
@@ -8,14 +8,14 @@
   gap: 24px;
 }
 
-.textWrapper {
+.aboutMainTextWrapper {
   display: flex;
   flex-direction: column;
 
 }
 
 
-.title {
+.aboutMainTitle {
 font-family: var(--font-display);
 font-weight: 600;
 font-size: 26px;
@@ -24,19 +24,19 @@ padding-bottom: 24px;
 
 }
 
-.titleSpan {
+.aboutMainTitleSpan {
 color: var(--base-danger);
 
 }
 
-.description {
+.aboutMainDescriptionS {
 font-weight: 400;
 font-size: 18px;
 line-height: 1.6;
 padding-bottom: 36px;
 }
 
-.link {
+.aboutMainLink {
   display: flex;
   align-items: center ;
 
@@ -49,24 +49,24 @@ font-size: 18px;
 color: var(--base-danger);
 }
 
-.link:hover,
-.link:focus {
+.aboutMainLink:hover,
+.aboutMainLink:focus {
   color: var(--base-danger-dark);
 
 }
 
-.link:active {
+.aboutMainLink:active {
   color: var(--base-danger-darker);
 
 }
 
-.icon {
+.aboutMainIcon {
   fill: currentColor;
   transition: transform 0.3s ease;
 }
 
 
-  .featureList {
+  .aboutMainFeatureList {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -75,7 +75,7 @@ color: var(--base-danger);
   gap: 24px;
 }
 
-.featureItem {
+.aboutMainFeatureItem {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -87,7 +87,7 @@ color: var(--base-danger);
 background-color: var(--base-light);
 }
 
-.featureLabel {
+.aboutMainFeatureLabel {
 font-weight: 500;
 font-size: 22px;
 }
@@ -95,23 +95,23 @@ font-size: 22px;
   fill: var(--base-danger);
 }
 @media only screen and (min-width: 768px) {
-.AboutMainSectionS  {
+.aboutMainSection  {
   max-width: 100%;
   background-size: cover;
 
 }
 
-.textWrapper {
+.aboutMainTextWrapper {
   max-width: 704px;
 }
 
-  .title {
+  .aboutMainTitle {
     font-weight: 500;
     font-size: 38px;
     line-height: 1.3;
 
   }
-  .featureList {
+  .aboutMainFeatureList {
   display: flex;
   flex-direction: row;
 justify-content: space-around;
@@ -119,20 +119,20 @@ justify-content: space-around;
   gap: 24px;
   max-width: 704px;
 }
-.featureItem {
+.aboutMainFeatureItem {
  width: 340px;
 }
 }
 
 @media screen and (min-width: 1440px) {
-  .textWrapper {
+  .aboutMainTextWrapper {
     width: 648px;
   }
-  .AboutMainSectionS  {
+  .AboutMainSection  {
   flex-direction: row;
 
 }
-.featureItem {
+.aboutMainFeatureItem {
  width: 312px;
 }
   }
