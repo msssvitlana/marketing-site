@@ -8,7 +8,7 @@ const AboutMain = () => {
 
   return (
      
-    <section className={styles.AboutMainSection}>
+    <section className={styles.aboutMainSection}>
       <div className={styles.leftSide}>
                <div className={styles.aboutMainTextWrapper}>
                 
