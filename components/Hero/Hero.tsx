@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <>
      
-          <section className={styles.hero}>
+          <section className={styles.heroSection}>
                 <p className={styles.agency}>Рекламне агентство</p>
                <div className={styles.textWrapper}>
                 

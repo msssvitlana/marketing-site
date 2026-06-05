@@ -1,0 +1,139 @@
+.aboutMainSection {
+ font-family: var(--font-sans);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 92px 0px;
+  width: 100%;  
+  gap: 24px;
+}
+
+.aboutMainTextWrapper {
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+.aboutMainTitle {
+font-family: var(--font-display);
+font-weight: 600;
+font-size: 26px;
+line-height: 1.3;
+padding-bottom: 24px;
+
+}
+
+.aboutMainTitleSpan {
+color: var(--base-danger);
+
+}
+
+.aboutMainDescriptionS {
+font-weight: 400;
+font-size: 18px;
+line-height: 1.6;
+padding-bottom: 36px;
+}
+
+.aboutMainLink {
+  display: flex;
+  align-items: center ;
+
+ font-weight: 500;
+font-size: 18px;
+  gap: 8px;
+
+ transition: color 0.3s ease;
+           
+color: var(--base-danger);
+}
+
+.aboutMainLink:hover,
+.aboutMainLink:focus {
+  color: var(--base-danger-dark);
+
+}
+
+.aboutMainLink:active {
+  color: var(--base-danger-darker);
+
+}
+
+.aboutMainIcon {
+  fill: currentColor;
+  transition: transform 0.3s ease;
+}
+
+
+  .aboutMainFeatureList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 24px;
+}
+
+.aboutMainFeatureItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+    gap: 24px;
+    padding: 24px 10px;
+
+
+    box-shadow: 0 6px 16px -2px rgba(19, 22, 39, 0.08);
+background-color: var(--base-light);
+}
+
+.aboutMainFeatureLabel {
+font-weight: 500;
+font-size: 22px;
+}
+.featureIcon {
+  fill: var(--base-danger);
+}
+@media only screen and (min-width: 768px) {
+.aboutMainSection  {
+  max-width: 100%;
+  background-size: cover;
+
+}
+
+.aboutMainTextWrapper {
+  max-width: 704px;
+}
+
+  .aboutMainTitle {
+    font-weight: 500;
+    font-size: 38px;
+    line-height: 1.3;
+
+  }
+  .aboutMainFeatureList {
+  display: flex;
+  flex-direction: row;
+justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 24px;
+  max-width: 704px;
+}
+.aboutMainFeatureItem {
+ width: 340px;
+}
+}
+
+@media screen and (min-width: 1440px) {
+  .aboutMainTextWrapper {
+    width: 648px;
+  }
+  .AboutMainSection  {
+  flex-direction: row;
+
+}
+.aboutMainFeatureItem {
+ width: 312px;
+}
+  }
+

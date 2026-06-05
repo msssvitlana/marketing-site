@@ -4,7 +4,7 @@ import "modern-normalize/modern-normalize.css";
 import "./globals.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
-
+import Hero from '@/components/Hero/Hero'
 const montserratSans = Montserrat({
   variable: "--font-sans",
   subsets: ["latin", "cyrillic"],
@@ -33,6 +33,7 @@ export default function RootLayout({
         className={`${montserratSans.variable} ${montserratDisplay.variable} antialiased`}
       >
         <Header />
+      
 
         <main>{children}</main>
 
