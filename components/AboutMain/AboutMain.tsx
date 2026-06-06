@@ -9,7 +9,7 @@ const AboutMain = () => {
   return (
      
     <section className={styles.aboutMainSection}>
-      <div className={styles.leftSide}>
+      <div className={styles.aboutMainLeftSide}>
                <div className={styles.aboutMainTextWrapper}>
                 
                   <h2 className={styles.aboutMainTitle}>Про <span className={styles.aboutMainTitleSpan}>компанію</span> </h2>
