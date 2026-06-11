@@ -1,56 +1,40 @@
-.heroSection {
+.connectionSection {
  font-family: var(--font-sans);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 92px 0px;
-  background-size: cover;
+  padding: 32px 0px;
+box-shadow: 0 8px 16px -2px rgba(19, 22, 39, 0.16);background-color: var(--base-light);
+
   width: 100%;  
 }
 
 .textWrapper {
   display: flex;
   flex-direction: column;
-
+gap: 24px;
+padding-bottom: 36px;
+text-align: center;
 }
 
-.agency {
-padding-left: 8px;
-padding-bottom: 24px;
-font-weight: 500;
-font-size: 18px;
-position: relative;
-
-}
-.agency::before{
-    content: '';
-    height: 22px;
-    width: 1px;
-    background-color: var(--base-ink);
-    position: absolute;
-    left: 0;
-   top: 0;
-
-}
-.title {
+.connectionSectionTitle {
 font-family: var(--font-display);
-font-weight: 500;
-font-size: 36px;
+font-weight: 600;
+font-size: 26px;
 line-height: 1.3;
-padding-bottom: 16px;
+
 
 }
 
-.titleSpan {
+.connectionSectionTitleSpan {
 color: var( --base-danger);
 
 }
 
-.description {
+.connectionSectionDescription {
 font-weight: 400;
 font-size: 18px;
 line-height: 1.6;
-padding-bottom: 56px;
 }
 
 .phoneNumber {
@@ -82,46 +66,32 @@ background-color: var( --base-danger);
 
 
 @media only screen and (min-width: 768px) {
-.heroSection {
-  max-width: 100%;
-
+.connectionSection {
+   align-items: center;
+padding: 32px 32px;
 }
 
-.textWrapper {
 
-  max-width: 522px;
-}
 
-  .title {
-    font-size: 58px;
-    line-height: 1.29;
-    padding-bottom: 32px;
+  .connectionSectionTitle {
+    font-size: 38px;
+    line-height: 1.3;
+    font-weight: 500;
+    /* padding-bottom: 32px; */
 
   }
 
-  .description {
-font-size: 24px;
-line-height: 1.5;
-  }
 
-.phoneNumber {
-padding: 16px 91px;
-width: 340px;
-height: 54px;
-}
   
 }
 
 
 @media screen and (min-width: 1440px) {
-    .title {
-font-size: 70px;
-line-height: 1.07;
-width: 720px;
-  }
-  .description {
-font-size: 24px;
-line-height: 1.5;
+  
+
+  .textWrapper {
+
+max-width: 700px;
 
 }
   }
