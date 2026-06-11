@@ -4,9 +4,9 @@ import Link from "next/link";
 import styles from "./Navigation.module.css";
 import { navigation } from "@/constants/nav";
 import Dropdown from "../Dropdown/Dropdown";
-import React, { useState } from "react";
+import { useState } from "react";
 import { usePathname } from "next/navigation";
-import withBlurClick from "@/helper/utils";
+import { withBlurClick } from "@/helper/utils";
 
 const Navigation = () => {
   const [openId, setOpenId] = useState<string | null>(null);

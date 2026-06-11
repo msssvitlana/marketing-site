@@ -5,7 +5,7 @@ import Button from "../ui/Button/Button";
 import styles from "./Dropdown.module.css";
 import Link from "next/link";
 import Icon from "../ui/Icon/Icon";
-import withBlurClick from "@/helper/utils";
+import { withBlurClick } from "@/helper/utils";
 import { useCallback, useEffect, useRef } from "react";
 
 type DropdownProps = {
