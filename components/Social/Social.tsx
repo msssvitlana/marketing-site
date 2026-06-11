@@ -1,7 +1,7 @@
 import { socials } from "@/constants/social";
 import styles from "./Social.module.css";
 import Icon from "../ui/Icon/Icon";
-import withBlurClick from "@/helper/utils";
+import { withBlurClick } from "@/helper/utils";
 
 const Social = () => {
   return (

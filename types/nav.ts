@@ -4,3 +4,9 @@ export type NavigationItem = {
   link?: string;
   children?: NavigationItem[];
 };
+
+export type NavCategory = {
+  id: string;
+  label: string;
+  anchor: string;
+};

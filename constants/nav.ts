@@ -1,4 +1,45 @@
-import { NavigationItem } from "@/types/nav";
+import { createNavChildren } from "@/helper/utils";
+import { NavCategory, NavigationItem } from "@/types/nav";
+
+const navCategories: NavCategory[] = [
+  {
+    id: "outdoor",
+    label: "Зовнішня реклама",
+    anchor: "outdoor-advertising",
+  },
+  {
+    id: "window",
+    label: "Оформлення вітрин і декор інтер'єру",
+    anchor: "window-display-decor",
+  },
+  {
+    id: "print",
+    label: "Поліграфія і широкоформатний друк",
+    anchor: "print-large-format",
+  },
+  {
+    id: "nonpromo",
+    label: "Нерекламна продукція",
+    anchor: "non-promotional-products",
+  },
+];
+
+const navChildrenServices = [
+  {
+    id: "all-services",
+    label: "Всі послуги",
+    link: "/services",
+  },
+  ...createNavChildren("/services", navCategories),
+];
+const navChildrenPortfolio = [
+  {
+    id: "all-services",
+    label: "Всі послуги",
+    link: "/portfolio",
+  },
+  ...createNavChildren("/portfolio", navCategories),
+];
 
 export const navigation: NavigationItem[] = [
   {
@@ -14,33 +55,12 @@ export const navigation: NavigationItem[] = [
   {
     id: "services",
     label: "Послуги",
-    children: [
-      {
-        id: "outdoor",
-        label: "Зовнішня реклама",
-        link: "/services#outdoor-advertising",
-      },
-      {
-        id: "window",
-        label: "Оформлення вітрин і декор інтер'єру",
-        link: "/services#window-display-decor",
-      },
-      {
-        id: "print",
-        label: "Поліграфія і широкоформатний друк",
-        link: "/services#print-large-format",
-      },
-      {
-        id: "nonpromo",
-        label: "Нерекламна продукція",
-        link: "/services#non-promotional-products",
-      },
-    ],
+    children: navChildrenServices,
   },
   {
     id: "portfolio",
     label: "Портфоліо",
-    link: "/portfolio",
+    children: navChildrenPortfolio,
   },
   {
     id: "contacts",
