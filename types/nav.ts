@@ -5,7 +5,7 @@ export type NavigationItem = {
   children?: NavigationItem[];
 };
 
-export type NavCategory = {
+export type ServiceCategory = {
   id: string;
   label: string;
   anchor: string;

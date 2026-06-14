@@ -1,4 +1,4 @@
-import { NavCategory } from "@/types/nav";
+import { ServiceCategory, NavigationItem } from "@/types/nav";
 
 export const withBlurClick = (
   e: React.MouseEvent<HTMLElement>,
@@ -9,7 +9,10 @@ export const withBlurClick = (
   e.currentTarget.blur();
 };
 
-export const createNavChildren = (baseURL: string, categories: NavCategory[]) =>
+export const createNavChildren = (
+  baseURL: string,
+  categories: readonly ServiceCategory[],
+): NavigationItem[] =>
   categories.map(({ id, label, anchor }) => ({
     id,
     label,
