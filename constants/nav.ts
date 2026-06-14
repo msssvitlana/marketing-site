@@ -1,7 +1,7 @@
 import { createNavChildren } from "@/helper/utils";
-import { NavCategory, NavigationItem } from "@/types/nav";
+import { NavigationItem, ServiceCategory } from "@/types/nav";
 
-const navCategories: NavCategory[] = [
+const serviceCategories: ServiceCategory[] = [
   {
     id: "outdoor",
     label: "Зовнішня реклама",
@@ -24,21 +24,25 @@ const navCategories: NavCategory[] = [
   },
 ];
 
-const navChildrenServices = [
-  {
-    id: "all-services",
-    label: "Всі послуги",
-    link: "/services",
-  },
-  ...createNavChildren("/services", navCategories),
+const allServicesItem: NavigationItem = {
+  id: "all-services",
+  label: "Всі послуги",
+  link: "/services",
+};
+
+const allPortfolioItem: NavigationItem = {
+  id: "all-portfolio",
+  label: "Всі роботи",
+  link: "/portfolio",
+};
+
+const navChildrenServices: NavigationItem[] = [
+  allServicesItem,
+  ...createNavChildren("/services", serviceCategories),
 ];
-const navChildrenPortfolio = [
-  {
-    id: "all-services",
-    label: "Всі послуги",
-    link: "/portfolio",
-  },
-  ...createNavChildren("/portfolio", navCategories),
+const navChildrenPortfolio: NavigationItem[] = [
+  allPortfolioItem,
+  ...createNavChildren("/portfolio", serviceCategories),
 ];
 
 export const navigation: NavigationItem[] = [
